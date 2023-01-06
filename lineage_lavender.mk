@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2019 The LineageOS Project
+# Copyright (C) 2021-2023 The ExodusOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -10,9 +11,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common LineageOS stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+# Exodus Properties
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+TARGET_USES_AOSP_RECOVERY := true
+EXODUS_MAINTAINER := melles1991-&-Sensei-Developer
 
 # Inherit from lavender device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -26,9 +30,12 @@ PRODUCT_MODEL := Redmi Note 7
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE="lavender" \
-    PRODUCT_NAME="lavender" \
-    PRIVATE_BUILD_DESC="lavender-user 10 QKQ1.190910.002 V12.5.3.0.QFGMIXM release-keys"
+# Fingerprint
+BUILD_FINGERPRINT := xiaomi/lavender/lavender:10/QKQ1.191008.001/V12.5.3.0.QFLMIXM:user/release-keys
+BUILD_DESCRIPTION := lavender-user 10 QKQ1.191008.001 V12.5.3.0.QFLMIXM release-keys
 
-BUILD_FINGERPRINT :="google/raven/raven:13/TP1A.220624.021/8877034:user/release-keys"
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=$(BUILD_FINGERPRINT)
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="$(BUILD_DESCRIPTION)"
