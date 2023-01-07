@@ -90,6 +90,10 @@ on early-init
     write /sys/block/mmcblk0/queue/nr_requests 256
     write /sys/block/mmcblk0/queue/iostats 0
 
+    # Workarround for cache
+    rm /data/resource-cache
+    rm /data/system/package_cache 
+
 on init
     # Create cgroup mount point for memory
     mkdir /sys/fs/cgroup/memory/bg 0750 root system
