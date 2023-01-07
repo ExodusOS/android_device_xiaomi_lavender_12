@@ -6,6 +6,7 @@ persist.vendor.cne.feature=1
 
 # Graphics
 debug.sf.enable_hwc_vds=0
+debug.hwui.skia_atrace_enabled=false
 
 #Dex
 dalvik.vm.dex2oat64.enabled=true
