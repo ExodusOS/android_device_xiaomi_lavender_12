@@ -28,5 +28,8 @@ persist.dirac.acs.controller=qem
 persist.dirac.acs.ignore_error=1 
 persist.dirac.acs.storeSettings=1
 
+# Service reschedule
+persist.sys.am.reschedule_service=true
+
 #Display 
 renderthread.skia.reduceopstasksplitting=true
