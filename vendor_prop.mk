@@ -244,6 +244,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
    ro.control_privapp_permissions=log
 
+# Phantom process monitoring
+PRODUCT_PROPERTY_OVERRIDES += \
+sys.fflag.override.settings_enable_monitor_phantom_procs=false
+
 # Configure dex2oat
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.fw.dex2oat_thread_count=8 \
