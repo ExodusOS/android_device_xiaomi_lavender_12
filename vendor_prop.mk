@@ -208,6 +208,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     debug.sf.late.app.duration=20000000 \
     debug.sf.hwc.min.duration=23000000 \
     debug.sf.disable_client_composition_cache=1 \
+    ro.surface_flinger.uclamp.min=130 \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     ro.surface_flinger.max_virtual_display_dimension=4096
